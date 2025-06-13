@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GeNaMi - A Place To Share What You Love!</title>
+
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -140,7 +142,7 @@
 
     .modal-entry {
       padding: 0.5em 0;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid Violet;
     }
 
     .modal-entry:last-child {
@@ -152,6 +154,7 @@
 
   <header>
     <h1>GeNaMi</h1>
+    <img src ="GeNaMi-Logo.jpeg" alt="GeNaMi Logo!" height ="150"/>
     <p>Where Music & Movies Connect People</p>
     <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
   </header>
@@ -182,7 +185,7 @@
       <input type="hidden" id="rating-value" name="rating" />
 
       <label for="review">Your Review Of This Movie or Series:</label>
-      <textarea id="review" rows="5" maxlength="500" oninput="updateCounter(this, 'review-count')" required></textarea>
+      <textarea id="review" rows="5" maxlength="250" oninput="updateCounter(this, 'review-count')" required></textarea>
       <p id="review-count">0/500 characters</p>
 
       <button type="submit">Submit Review</button>
@@ -257,17 +260,42 @@
             <strong> Maya Jain on Twilight</strong>
             <p> I hate it just so bad don't watch</p>
         </div>
+        <div class="model-entry" data-rating="1">
+            <strong> Sammi on Snow White Live action</strong>
+            <p> Poor planning, poor casting, unfortunate that it's live action yet it doesn't have live actors</p>
+        </div>
+        <div class="model-entry" data-rating="5">
+            <strong> Maya on Orange Is The New Black</strong>
+            <p> I Love it, amazing except very heavy on adult scenes whoops</p>
+        </div>
+         <div class="model-entry" data-rating="5">
+            <strong> Genevieve on Spirited Away</strong>
+            <p> So cute and comforting</p>
+        </div>
+        <div class="model-entry" data-rating="3">
+            <strong> Anu on Iron Man</strong>
+            <p> It was good but plot a little boring at times</p>
+        </div>
+         <div class="model-entry" data-rating="5">
+            <strong> Sammi on Dexter</strong>
+            <p> So good! Wish it didn't end like it did tho</p>
+        </div>
+         <div class="model-entry" data-rating="4">
+            <strong> Ella on You</strong>
+            <p> Great but kinda sad at times </p>
+        </div>
+
 
         <div class="modal-entry" data-rating="4">
           <strong>🔥 Maya Jain on Back to the future </strong>
           <p>Really good, really funny and interesting concept!!!</p>
         </div>
         <div class="modal-entry" data-rating="5">
-          <strong>🎵 Alex on Jurassic World</strong>
+          <strong>😘 Alex on Jurassic World</strong>
           <p>Really enjoyed it but it doesn't have much plot, more for enjoyment</p>
         </div>
         <div class="modal-entry" data-rating="5">
-          <strong> Melody on Conjuring 2 </strong>
+          <strong> 😁Melody on Conjuring 2 </strong>
           <p>Entertaining, very unpredicatble </p>
         </div>
       </div>
