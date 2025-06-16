@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GeNaMi - A Place To Share What You Love!</title>
+  <title>GeNaMei - A Place To Share What You Love!</title>
 
 
   <style>
@@ -154,9 +154,9 @@
 
   <header>
     <h1>GeNaMi</h1>
-    <img src ="GeNaMi-Logo.jpeg" alt="GeNaMi Logo!" height ="150"/>
-    <p>Stuck On What To Listen Or Watch? GeNaMi Is The Place To Be!</p>
-    <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙Dark Mode</button>
+    <img src ="GeNaMei-Logo.jpeg" alt="GeNaMei Logo!" height ="150"/>
+    <p>Stuck On What To Listen To Or Watch? GeNaMei Is The Place To Be!</p>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
   </header>
 
   <nav>
@@ -184,12 +184,12 @@
       </div>
       <input type="hidden" id="rating-value" name="rating" />
 
-      <label for="review">Your Review Of This Movie or Series:</label>
+      <label for="review">Your Review Of This Movie/Series/Song:</label>
       <textarea id="review" rows="5" maxlength="250" oninput="updateCounter(this, 'review-count')" required></textarea>
-      <p id="review-count">0/500 characters</p>
+      <p id="review-count">0/250 characters</p>
 
       <button type="submit">Submit Review</button>
-      <button type="button" onclick="alert('Feature coming soon!')">🔗 Share Your Review</button>
+      <button type="button" onclick="alert('Feature coming soon!')"> Share Your Review</button>
     </form>
   </section>
 
@@ -236,7 +236,7 @@
   </section>
 
   <section>
-    <button onclick="openModal()" style="display:block;margin:2em auto;">👀 See More Reviews & Recommendations</button>
+    <button onclick="openModal()" style="display:block;margin:2em auto;">See More Reviews & Recommendations</button>
   </section>
 
   <!-- Modal -->
