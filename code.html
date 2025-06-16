@@ -155,8 +155,8 @@
   <header>
     <h1>GeNaMi</h1>
     <img src ="GeNaMi-Logo.jpeg" alt="GeNaMi Logo!" height ="150"/>
-    <p>Where Music & Movies Connect People</p>
-    <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    <p>Stuck On What To Listen Or Watch? GeNaMi Is The Place To Be!</p>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙Dark Mode</button>
   </header>
 
   <nav>
@@ -166,12 +166,12 @@
   </nav>
 
   <section id="reviews">
-    <h2>Write a Review - You Can Go Into Depth</h2>
+    <h2>Write a Review - You Can Go Into Depth If You Want</h2>
     <form>
-      <label for="username">Your Name - This Can Be A Username Or Your Username:</label>
+      <label for="username">Your Name - This Can Be A Username Or Your Name:</label>
       <input type="text" id="username" required />
 
-      <label for="media-title">Movie/Series Title:</label>
+      <label for="media-title">Movie/Series/Music Name:</label>
       <input type="text" id="media-title" required />
 
       <label for="rating">Rating:</label>
@@ -202,7 +202,7 @@
       <label for="friend-name">Friend's Name:</label>
       <input type="text" id="friend-name" required />
 
-      <label for="recommendation">Movie or Series to Recommend:</label>
+      <label for="recommendation">Movie/Series/Music To Recommend:</label>
       <input type="text" id="recommendation" required />
 
       <textarea placeholder="Optional message..." rows="3"></textarea>
@@ -212,14 +212,14 @@
   </section>
 
   <section id="comments">
-    <h2>Leave a Comment</h2>
+    <h2>Leave A Comment</h2>
     <form>
       <label for="comment-name">Name:</label>
       <input type="text" id="comment-name" required />
 
       <label for="comment">Comment:</label>
       <textarea id="comment" rows="4" maxlength="300" oninput="updateCounter(this, 'comment-count')" required></textarea>
-      <p id="comment-count">0/300 characters</p>
+      <p id="comment-count">0/250 characters</p>
 
       <label>Add Emoji:</label>
       <select onchange="addEmojiToComment(this.value)">
@@ -270,7 +270,6 @@
         </div>
          <div class="model-entry" data-rating="5">
             <strong> Genevieve on Spirited Away</strong>
-            <p> So cute and comforting</p>
         </div>
         <div class="model-entry" data-rating="3">
             <strong> Anu on Iron Man</strong>
@@ -284,8 +283,6 @@
             <strong> Ella on You</strong>
             <p> Great but kinda sad at times </p>
         </div>
-
-
         <div class="modal-entry" data-rating="4">
           <strong>🔥 Maya Jain on Back to the future </strong>
           <p>Really good, really funny and interesting concept!!!</p>
@@ -301,12 +298,13 @@
       </div>
     </div>
   </div>
-
-  <script>
+    
+  <script> 
     function updateCounter(input, displayId) {
       const display = document.getElementById(displayId);
       display.textContent = `${input.value.length}/${input.maxLength} characters`;
     }
+      
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
