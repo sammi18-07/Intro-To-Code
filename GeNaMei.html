@@ -179,12 +179,16 @@
       <input type="text" id="media-title" required />
 
       <label for="rating">Rating:</label>
-      <div class="star-rating" id="rating">
-        <span onclick="setRating(1)">⭐</span>
-        <span onclick="setRating(2)">⭐</span>
-        <span onclick="setRating(3)">⭐</span>
-        <span onclick="setRating(4)">⭐</span>
-        <span onclick="setRating(5)">⭐</span>
+      <div class="star-rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <p id="rating-value">Rating: 0</p>
+
+        
       </div>
       <input type="hidden" id="rating-value" name="rating" />
 
