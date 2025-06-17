@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeNaMi - A Place To Share What You Love!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: linear-gradient(270deg, #5c67f2, #4a54e1, #333);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
+
+    nav {
+      background: #444;
+      padding: 0.5em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 1em;
+      margin-top: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #5c67f2;
+      color: white;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a54e1;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea,
+    .dark-mode select {
+      background-color: #1e1e1e;
+      color: #fff;
+      border-color: #555;
+    }
+
+    .dark-mode form {
+      background-color: #2a2a2a;
+    }
+
+    .star-rating span {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    .star-rating span:hover,
+    .star-rating span.active {
+      color: gold;
+    }
+
+    #dark-mode-toggle {
+      margin-top: 1em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Modal styles */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2em;
+      margin: 5% auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-entry {
+      padding: 0.5em 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .modal-entry:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GeNaMi</h1>
+    <p>Where Music & Movies Connect People</p>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <nav>
+    <a href="Reviewpage.html">Reviews</a>
+    <a href="Recommendpage.html">Recommendations</a>
+    <a href="Commentpage.html">Comments</a>
+  </nav>
+
+<section id="comments">
+    <h2>Leave a Comment</h2>
+    <form>
+      <label for="comment-name">Name:</label>
+      <input type="text" id="comment-name" required />
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="4" maxlength="300" oninput="updateCounter(this, 'comment-count')" required></textarea>
+      <p id="comment-count">0/300 characters</p>
+
+      <label>Add Emoji:</label>
+      <select onchange="addEmojiToComment(this.value)">
+        <option value="">😊 Pick one</option>
+        <option value="🎬">🎬</option>
+        <option value="😍">😍</option>
+        <option value="😢">😢</option>
+        <option value="😎">😎</option>
+        <option value="🔥">🔥</option>
+      </select>
+
+      <button type="submit">Post Comment</button>
+    </form>
+  </section>
+
+    <section>
+    <button onclick="openModal()" style="display:block;margin:2em auto;">👀 See More Reviews & Recommendations</button>
+  </section>
+
