@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeNaMei - A Place To Share What You Love!</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: linear-gradient(270deg, #5c67f2, #4a54e1, #333);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
+
+    nav {
+      background: #444;
+      padding: 0.5em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 1em;
+      margin-top: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #5c67f2;
+      color: white;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a54e1;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea,
+    .dark-mode select {
+      background-color: #1e1e1e;
+      color: #fff;
+      border-color: #555;
+    }
+
+    .dark-mode form {
+      background-color: #2a2a2a;
+    }
+
+    .star-rating span {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    .star-rating span:hover,
+    .star-rating span.active {
+      color: gold;
+    }
+
+    #dark-mode-toggle {
+      margin-top: 1em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Modal styles */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2em;
+      margin: 5% auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-entry {
+      padding: 0.5em 0;
+      border-bottom: 1px solid Violet;
+    }
+
+    .modal-entry:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <h1 Style =
+    "font-size:50px;"
+    >GeNaMei</h1>
+    <img src ="GeNaMei.png" alt="GeNaMei Logo!" height ="350"/>
+    <p>Stuck On What To Listen To Or Watch? GeNaMei Is The Place To Be!</p>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+  </header>
+
+
+  <nav>
+    <a href="Review1.html">Reviews</a>
+    <a href="Recommend1.html">Recommendations</a>
+    <a href="Comment1.html">Comments</a>
+  </nav>
+
+  <section id="reviews">
+    <h2>Write a Review - You Can Go Into Depth If You Want</h2>
+    <form>
+      <label for="username">Your Name - This Can Be A Username Or Your Name:</label>
+      <input type="text" id="username" required />
+
+      <label for="media-title">Movie/Series/Music Name:</label>
+      <input type="text" id="media-title" required />
+
+      <label for="rating">Rating:</label>
+      <div class="star-rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <p id="rating-value">Rating: 0</p>
+
+        
+      </div>
+      <input type="hidden" id="rating-value" name="rating" />
+
+      <label for="review">Your Review Of This Movie/Series/Song:</label>
+      <textarea id="review" rows="5" maxlength="250" oninput="updateCounter(this, 'review-count')" required></textarea>
+      <p id="review-count">0/250 characters</p>
+
+      <button type="submit">Submit Review</button>
+      <button type="button" onclick="alert('Feature coming soon!')"> Share Your Review</button>
+    </form>
+  </section>
