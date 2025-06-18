@@ -169,9 +169,34 @@
     <a href="Comment1.html">Comments</a>
   </nav>
 
+  <section id="reviews">
+    <h2>Write a Review - You Can Go Into Depth If You Want</h2>
+    <form>
+      <label for="username">Your Name - This Can Be A Username Or Your Name:</label>
+      <input type="text" id="username" required />
 
+      <label for="media-title">Movie/Series/Music Name:</label>
+      <input type="text" id="media-title" required />
 
+      <label for="rating">Rating:</label>
+      <div class="star-rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      <p id="rating-value">Rating: 0</p>
 
+        
+      </div>
+      <input type="hidden" id="rating-value" name="rating" />
 
- 
+      <label for="review">Your Review Of This Movie/Series/Song:</label>
+      <textarea id="review" rows="5" maxlength="250" oninput="updateCounter(this, 'review-count')" required></textarea>
+      <p id="review-count">0/250 characters</p>
 
+      <button type="submit">Submit Review</button>
+      <button type="button" onclick="alert('Feature coming soon!')"> Share Your Review</button>
+    </form>
+  </section>
