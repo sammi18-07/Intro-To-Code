@@ -1,24 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-    <h1 style="background-color:powderblue;">my name is sammi</h1>
-    <p style="background-color:tomato;">i am a dog person</p>
-    <head>
-        <meta charset="utf-8">
-        <title>my first website</title>
-    </head>
-    <body>
-        <p style="background-color: tomato;"> i like dogs because they are very cute and cosy</p>
-        <p style="background-color: powderblue;"> i dont like cats because they are very independant</p>
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GeNaMei - A Place To Share What You Love!</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: linear-gradient(270deg, #5c67f2, #4a54e1, #333);
+      background-size: 600% 600%;
+      animation: gradientShift 10s ease infinite;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
+
+    nav {
+      background: #444;
+      padding: 0.5em;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background: white;
+      padding: 1em;
+      margin-top: 1em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #5c67f2;
+      color: white;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a54e1;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea,
+    .dark-mode select {
+      background-color: #1e1e1e;
+      color: #fff;
+      border-color: #555;
+    }
+
+    .dark-mode form {
+      background-color: #2a2a2a;
+    }
+
+    .star-rating span {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    .star-rating span:hover,
+    .star-rating span.active {
+      color: gold;
+    }
+
+    #dark-mode-toggle {
+      margin-top: 1em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Modal styles */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2em;
+      margin: 5% auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-entry {
+      padding: 0.5em 0;
+      border-bottom: 1px solid Violet;
+    }
+
+    .modal-entry:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <h1 Style =
+    "font-size:50px;"
+    >GeNaMei</h1>
+    <img src ="GeNaMei.png" alt="GeNaMei Logo!" height ="350"/>
+    <p>Stuck On What To Listen To Or Watch? GeNaMei Is The Place To Be!</p>
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+  </header>
+
+
+  <nav>
+    <a href="HomePage1.html">Home Page</a>
+    <a href="Review1.html">Reviews</a>
+    <a href="Recommend1.html">Recommendations</a>
+    <a href="Comment1.html">Comments</a>
+  </nav>
+
+  <section id="reviews">
+    <h2>Write a Review - You Can Go Into Depth If You Want</h2>
+    <form>
+      <label for="username">Your Name - This Can Be A Username Or Your Name:</label>
+      <input type="text" id="username" required />
+
+      <label for="media-title">Movie/Series/Music Name:</label>
+      <input type="text" id="media-title" required />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5 Star Rating</title>
+  <style>
+    .star-rating {
+      direction: rtl;
+      font-size: 2rem;
+      unicode-bidi: bidi-override;
+      display: inline-flex;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: gold;
+    }
+
+    #rating-value {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="star-rating">
+    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+  </div>
+
+  <div id="rating-value">Your rating: 0</div>
+
+  <script>
+    const stars = document.querySelectorAll('input[name="rating"]');
+    const ratingValue = document.getElementById('rating-value');
+
+    stars.forEach(star => {
+      star.addEventListener('change', () => {
+        ratingValue.textContent = `Your rating: ${star.value}`;
+      });
+    });
+  </script>
+
+</body>
 </html>
 
-<img src ="small-dog-owners-1.jpg" alt="picture of dog"/>
-
-<table>
-    <tr>
-        names
         
-    </tr>
+      </div>
+      <input type="hidden" id="rating-value" name="rating" />
+
+      <label for="review">Your Review Of This Movie/Series/Song:</label>
+      <textarea id="review" rows="5" maxlength="250" oninput="updateCounter(this, 'review-count')" required></textarea>
+      <p id="review-count">0/250 characters</p>
+
+      <button type="submit">Submit Review</button>
+      <button type="button" onclick="alert('Feature coming soon!')"> Share Your Review</button>
+    </form>
+  </section>
+
+  <section id="recommend">
+    <h2>Recommend To The Public</h2>
+    <form>
+      <label for="your-name">Your Name:</label>
+      <input type="text" id="your-name" required />
+
+      <label for="friend-name">Friend's Name:</label>
+      <input type="text" id="friend-name" required />
+
+      <label for="recommendation">Movie/Series/Music To Recommend:</label>
+      <input type="text" id="recommendation" required />
+
+      <textarea placeholder="Optional message..." rows="3"></textarea>
+
+      <button type="submit">Send Recommendation</button>
+    </form>
+  </section>
+
+  <section id="comments">
+    <h2>Leave A Comment</h2>
+    <form>
+      <label for="comment-name">Name:</label>
+      <input type="text" id="comment-name" required />
+
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="4" maxlength="300" oninput="updateCounter(this, 'comment-count')" required></textarea>
+      <p id="comment-count">0/250 characters</p>
+
+      <label>Add Emoji:</label>
+      <select onchange="addEmojiToComment(this.value)">
+        <option value="">😊 Pick one</option>
+        <option value="🎬">🎬</option>
+        <option value="😍">😍</option>
+        <option value="😢">😢</option>
+        <option value="😎">😎</option>
+        <option value="🔥">🔥</option>
+      </select>
+
+      <button type="submit">Post Comment</button>
+    </form>
+  </section>
+
+  <section>
+    <button onclick="openModal()" style="display:block;margin:2em auto;">See More Reviews & Recommendations</button>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="modal-content">
+      <button onclick="closeModal()" style="position:absolute;top:10px;right:15px;background:none;border:none;font-size:1.5em;cursor:pointer;">✖</button>
+      <h2>Community Reviews & Recommendations</h2>
 
 
-</table>
+      <div id="modal-content-list">
+        <div class="modal-entry" data-rating="1">
+            <strong> Maya Jain on Twilight</strong>
+            <p> I hate it just so bad don't watch</p>
+        </div>
+        <div class="modal-entry" data-rating="1">
+            <strong> Sammi on Snow White Live action</strong>
+            <p> Poor planning, poor casting, unfortunate that it's live action yet it doesn't have live actors</p>
+        </div>
+        <div class="modal-entry" data-rating="5">
+            <strong> Maya on Orange Is The New Black</strong>
+            <p> I Love it, amazing except very heavy on adult scenes whoops</p>
+        </div>
+         <div class="modal-entry" data-rating="5">
+            <strong> Genevieve on Spirited Away</strong>
+            <p> So cute and heartwarming</p>
+        </div>
+        <div class="modal-entry" data-rating="3">
+            <strong> Anu on Iron Man</strong>
+            <p> It was good but plot a little boring at times</p>
+        </div>
+         <div class="modal-entry" data-rating="5">
+            <strong> Sammi on Dexter</strong>
+            <p> So good! Wish it didn't end like it did tho</p>
+        </div>
+         <div class="modal-entry" data-rating="4">
+            <strong> Ella on You</strong>
+            <p> Great but kinda sad at times </p>
+        </div>
+        <div class="modal-entry" data-rating="4">
+          <strong>🔥 Maya Jain on Back to the future </strong>
+          <p>Really good, really funny and interesting concept!!!</p>
+        </div>
+        <div class="modal-entry" data-rating="5">
+          <strong>😘 Alex on Jurassic World</strong>
+          <p>Really enjoyed it but it doesn't have much plot, more for enjoyment</p>
+        </div>
+        <div class="modal-entry" data-rating="5">
+          <strong> 😁Melody on Conjuring 2 </strong>
+          <p>Entertaining, very unpredicatble </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script> 
+    function updateCounter(input, displayId) {
+      const display = document.getElementById(displayId);
+      display.textContent = `${input.value.length}/${input.maxLength} characters`;
+    }
+      
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function addEmojiToComment(emoji) {
+      const commentBox = document.getElementById('comment');
+      commentBox.value += emoji;
+    }
+
+    function setRating(value) {
+      document.getElementById("rating-value").value = value;
+      const stars = document.querySelectorAll("#rating span");
+      stars.forEach((star, index) => {
+        star.classList.toggle("active", index < value);
+      });
+    }
+
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    function filterByRating() {
+      const selected = document.getElementById('filter-rating').value;
+      const entries = document.querySelectorAll('.modal-entry');
+      entries.forEach(entry => {
+        const entryRating = entry.getAttribute('data-rating');
+        entry.style.display = (selected === 'all' || selected === entryRating) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
+
